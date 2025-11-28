@@ -1,8 +1,11 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask
 from .routes.character_routes import bp
 from .db import db, migrate
 from .models import character, greeting
+
+load_dotenv()
 
 def create_app(test_config=None):
     app = Flask(__name__)
